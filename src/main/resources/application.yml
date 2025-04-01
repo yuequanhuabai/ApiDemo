@@ -3,9 +3,9 @@
 spring:
   application:
     name: demo1
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: https://localhost:8080
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: https://localhost:8080
 
