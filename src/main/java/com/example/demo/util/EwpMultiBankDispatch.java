@@ -178,24 +178,24 @@ public class EwpMultiBankDispatch extends HttpServlet {
                                 (StringUtils.isEmpty(session.getAttribute("empnum").toString())) ||
                                 StringUtils.quoteIfString(session.getAttribute("umssessionid").toString())
                 ) {
-                         response.sendRedirect(eWPBaseUrl);
-                         return;
+                    response.sendRedirect(eWPBaseUrl);
+                    return;
                 }
 
-                redirectUrl=amlUrl+"?empnum="+session.getAttribute("empnum")+"&umssessionid="+session.getAttribute("umssessionid").toString();
+                redirectUrl = amlUrl + "?empnum=" + session.getAttribute("empnum") + "&umssessionid=" + session.getAttribute("umssessionid").toString();
 
-                logger.info("session.getAttribute(authstatu)"+ session.getAttribute("authstatus"));
+                logger.info("session.getAttribute(authstatu)" + session.getAttribute("authstatus"));
 
-                logger.info("sessin.getAttribute(empnum)"+ session.getAttribute("empnum"));
-                logger.info("sessin.getAttribute(userfullname)"+ session.getAttribute("userfullname"));
+                logger.info("sessin.getAttribute(empnum)" + session.getAttribute("empnum"));
+                logger.info("sessin.getAttribute(userfullname)" + session.getAttribute("userfullname"));
 
-                logger.info("sessin.getAttribute(bankcode)"+ session.getAttribute("bankcode"));
-                logger.info("sessin.getAttribute(deptcode)"+ session.getAttribute("deptcode"));
-                logger.info("sessin.getAttribute(divcode)"+ session.getAttribute("divcode"));
-                logger.info("sessin.getAttribute(brcode)"+ session.getAttribute("brcode"));
-                logger.info("sessin.getAttribute(sysright)"+ session.getAttribute("sysright"));
+                logger.info("sessin.getAttribute(bankcode)" + session.getAttribute("bankcode"));
+                logger.info("sessin.getAttribute(deptcode)" + session.getAttribute("deptcode"));
+                logger.info("sessin.getAttribute(divcode)" + session.getAttribute("divcode"));
+                logger.info("sessin.getAttribute(brcode)" + session.getAttribute("brcode"));
+                logger.info("sessin.getAttribute(sysright)" + session.getAttribute("sysright"));
 
-                System.out.println("Redirect to "+ redirectUrl);
+                System.out.println("Redirect to " + redirectUrl);
 
                 response.sendRedirect(redirectUrl);
                 System.out.println("------------end go to AML------------");
@@ -208,19 +208,19 @@ public class EwpMultiBankDispatch extends HttpServlet {
 
                 // for any unexpected input parameter
 
-                if(
-                        (session.getAttribute("empnum"))||
-                                (session.getAttribute("umssessionid"))||
-                                (StringUtils.isEmpty(session.getAttribute("empnum").toString()))||
+                if (
+                        (session.getAttribute("empnum")) ||
+                                (session.getAttribute("umssessionid")) ||
+                                (StringUtils.isEmpty(session.getAttribute("empnum").toString())) ||
                                 (StringUtils.isEmpty(session.getAttribute("umssessionid").toString()))
-                ){
+                ) {
                     response.sendRedirect(eWPBaseUrl);
                     return;
                 }
 
-                redirectUrl=h11Url+"?"+"empnum"+session.getAttribute("empnum")+"&umssessionid="+session.getAttribute("umssessinid");
+                redirectUrl = h11Url + "?" + "empnum" + session.getAttribute("empnum") + "&umssessionid=" + session.getAttribute("umssessinid");
 
-                System.out.println("Redirect to h11Url: "+ redirectUrl);
+                System.out.println("Redirect to h11Url: " + redirectUrl);
 
                 System.out.println("==========end go to H1===========");
                 return;
